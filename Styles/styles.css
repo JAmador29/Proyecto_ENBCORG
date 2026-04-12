@@ -829,6 +829,10 @@ footer {
     background-position: center;
 }
 
+.hero-nosotros.hero-oferta {
+    background-image: url("../img/competencias.jpg");
+}
+
 .hero-nosotros .overlay {
     position: absolute;
     inset: 0;
@@ -1021,4 +1025,108 @@ main.container {
     .historia-resumen {
         padding: 30px 15px;
     }
+}
+
+/* ================================================
+   14. OFERTA
+   ================================================ */
+
+.oferta-intro {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+}
+
+.oferta-intro h2 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    margin-bottom: 15px;
+}
+
+.oferta-intro p {
+    line-height: 1.7;
+}
+
+.oferta-programa {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.oferta-card {
+    max-width: 700px;
+    width: 100%;
+}
+
+.oferta-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.oferta-programa ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.oferta-programa li {
+    margin-bottom: 6px;
+}
+
+.oferta-docentes {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+}
+
+.oferta-docentes h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+}
+
+.oferta-beneficios {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.oferta-beneficios h2 {
+    color: var(--azul);
+    margin-bottom: 20px;
+}
+
+.oferta-beneficios ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.oferta-beneficios li {
+    background: var(--caqui);
+    padding: 10px 18px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    font-weight: bold;
+    color: var(--rojo);
+    transition: 0.3s;
+}
+
+.oferta-beneficios li:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+.oferta-card .btn {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+
+    .oferta-img {
+        height: 180px;
+    }
+
 }
