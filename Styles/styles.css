@@ -1,24 +1,42 @@
+/* ================================================
+   ESCUELA NACIONAL DE BOMBEROS
+   Hoja de estilos principal — styles.css
+   ================================================ */
 
+
+/* ------------------------------------------------
+   1. VARIABLES GLOBALES
+   ------------------------------------------------ */
 :root {
-    /* Estos son los coleres, lo puse asi porque senti que era
-     mas facil para estarlos llamando en lugar de escribirlos directamente por cada vez que los necesitemos*/
-    --rojo: #a3141b;
-    --azul: #2A306F;
-    --caqui: #E0D8B0;
-    --blanco: #ffffff;
-    --sombra: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --rojo:       #a3141b;
+    --rojo-osc:   #7f1015;
+    --azul:       #2A306F;
+    --caqui:      #E0D8B0;
+    --blanco:     #ffffff;
+    --gris-fondo: #f5f5f5;
+    --sombra:     0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
-/*Este es el estilo para el cuerpo de la página*/
-body{
 
-    font-family: 'Arial', sans-serif;
+/* ------------------------------------------------
+   2. RESET BASE
+   ------------------------------------------------ */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: var(--blanco);
 }
 
-/*--- Header--- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--blanco);
+    color: #1c1c1c;
+}
+
+
+/* ------------------------------------------------
+   3. HEADER Y NAVEGACIÓN
+   ------------------------------------------------ */
 header {
     background-color: var(--azul);
     padding: 10px 40px;
@@ -30,7 +48,6 @@ header {
     justify-content: space-between;
 }
 
-/* Este es el contenedor del logo y el texto */
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -59,7 +76,6 @@ header {
     font-size: 12px;
 }
 
-/* Estos son los enlaces de navegación (Inicio, Nosotros, Oferta academica, Transparencia, Contacto)*/
 nav ul {
     list-style: none;
     display: flex;
@@ -71,14 +87,23 @@ nav ul li a {
     color: var(--blanco);
     font-weight: bold;
     font-size: 14px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: var(--caqui);
 }
 
-/* --- Hero --- */
+.nav-activo {
+    color: var(--caqui) !important;
+    border-bottom: 2px solid var(--caqui);
+    padding-bottom: 2px;
+}
+
+
+/* ------------------------------------------------
+   4. HERO (compartido por todas las páginas)
+   ------------------------------------------------ */
 .hero-section {
     position: relative;
     width: 100%;
@@ -91,6 +116,7 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
+    display: block;
 }
 
 .hero-overlay {
@@ -115,25 +141,36 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.hero-tag,
+.hero-subtag {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--caqui);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* ------------------------------------------------
+   5. TARJETAS — INDEX
+   ------------------------------------------------ */
 .container {
     padding: 0 40px;
 }
 
-/* --- las tarjetas con la información --- */
 .cards-overlap {
     margin-top: -80px;
     position: relative;
     z-index: 10;
-    background: transparent;
 }
-
 
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-
 
 .card {
     background-color: var(--caqui);
@@ -156,7 +193,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-
 .text-link {
     color: var(--azul);
     text-decoration: none;
@@ -170,33 +206,277 @@ nav ul li a:hover {
     color: var(--rojo);
 }
 
-/* BOTÓN */
+
+/* ------------------------------------------------
+   6. BOTÓN
+   ------------------------------------------------ */
 .btn {
+    display: inline-block;
     margin-top: 15px;
     background-color: var(--rojo);
-    color: white;
+    color: var(--blanco);
     padding: 10px 15px;
     text-decoration: none;
     font-size: 0.9rem;
     border-radius: 4px;
-    display: inline-block;
     width: fit-content;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #7f1015;
+    background-color: var(--rojo-osc);
 }
 
-/* --- Este es el footer o pie de página --- */
+
+/* ------------------------------------------------
+   7. HISTORIA
+   ------------------------------------------------ */
+.historia-contenido {
+    max-width: 860px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.historia-contenido h2 {
+    font-size: 1.6rem;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.titulo-linea {
+    width: 60px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin-bottom: 40px;
+}
+
+/* Cada bloque es una tarjeta blanca con acento rojo */
+.historia-bloque {
+    background-color: var(--blanco);
+    border-left: 5px solid var(--rojo);
+    box-shadow: var(--sombra);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+}
+
+.historia-bloque .anio {
+    display: inline-block;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+}
+
+.historia-bloque p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: #333;
+}
+
+.historia-bloque p + p {
+    margin-top: 14px;
+}
+
+/* Bloque de cierre — fondo azul */
+.historia-cierre {
+    margin-top: 12px;
+    padding: 28px 32px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border-left: 6px solid var(--rojo);
+    box-shadow: var(--sombra);
+}
+
+.historia-cierre p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+}
+
+.historia-cierre strong {
+    color: var(--caqui);
+}
+
+
+/* ------------------------------------------------
+   8. CONTACTO
+   ------------------------------------------------ */
+.contacto-seccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+}
+
+.contacto-lateral {
+    background-color: var(--azul);
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.lateral-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lateral-linea {
+    display: block;
+    width: 36px;
+    height: 3px;
+    background-color: var(--rojo);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.lateral-header p {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--caqui);
+    font-weight: bold;
+}
+
+.dato-bloque {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.dato-icono {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.dato-label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(224, 216, 176, 0.6);
+    margin-bottom: 5px;
+}
+
+.dato-valor {
+    color: var(--blanco);
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 1.5;
+}
+
+.email-link {
+    word-break: break-all;
+    font-size: 0.85rem !important;
+}
+
+.dato-link {
+    display: block;
+    color: var(--caqui);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-top: 6px;
+    transition: color 0.2s;
+}
+
+.dato-link:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+.contacto-horario {
+    background-color: var(--caqui);
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.horario-titulo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 3px solid var(--rojo);
+    padding-bottom: 16px;
+}
+
+.horario-badge {
+    font-size: 1.6rem;
+}
+
+.horario-titulo h2 {
+    font-size: 1.3rem;
+    color: var(--azul);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.horario-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.horario-lista li {
+    display: grid;
+    grid-template-columns: 16px 90px 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.estado {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.estado.abierto {
+    background-color: #2e7d32;
+    box-shadow: 0 0 6px rgba(46, 125, 50, 0.5);
+}
+
+.estado.cerrado {
+    background-color: #bbb;
+}
+
+.cerrado-txt {
+    color: #888;
+}
+
+.horario-nota {
+    font-size: 0.82rem;
+    color: #555;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 14px;
+}
+
+
+/* ------------------------------------------------
+   9. FOOTER
+   ------------------------------------------------ */
 footer {
     margin-top: 40px;
     text-align: center;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: var(--gris-fondo);
     font-size: 14px;
+    color: #555;
 }
 
-/* --- Este es el estilo responsivo para que se vea a diferentes tamaños de pantalla --- */
+
+/* ------------------------------------------------
+   10. RESPONSIVO
+   ------------------------------------------------ */
 @media (max-width: 768px) {
 
     header {
@@ -232,5 +512,306 @@ footer {
 
     .container {
         padding: 0 20px;
+    }
+
+    .historia-contenido {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+
+    .historia-bloque {
+        padding: 18px 20px;
+    }
+
+    .contacto-seccion {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-lateral,
+    .contacto-horario {
+        padding: 40px 24px;
+    }
+
+    .horario-lista li {
+        grid-template-columns: 16px 80px 1fr;
+    }
+}
+
+
+/* ================================================
+   11. SECCIÓN DE BLOG (estilos integrados)
+   ================================================ */
+
+/* FONDO DEL BLOG */
+.blog-section {
+    padding: 80px 10%;
+    background-image: url("../img/Escoltas.JPG");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Capa oscura para que se lea el texto */
+.blog-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.blog-title,
+.blog-container,
+.blog-button {
+    position: relative;
+    z-index: 2;
+}
+
+/* TÍTULO DEL BLOG */
+.blog-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.blog-title h1 {
+    font-size: 40px;
+}
+
+.blog-title p {
+    font-size: 18px;
+}
+
+/* TARJETAS DEL BLOG */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    color: #2c2f75;
+}
+
+.blog-content p {
+    font-size: 14px;
+}
+
+/* TEXTO OCULTO (para leer más) */
+.extra-text {
+    display: none;
+    margin-top: 10px;
+}
+
+/* BOTONES DENTRO DE LAS TARJETAS */
+.blog-content button {
+    margin-top: 10px;
+    background: #c62828;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blog-content button:hover {
+    background: #a61c1c;
+}
+
+/* BOTÓN PRINCIPAL DEL BLOG */
+.blog-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.blog-button button {
+    background: #2c2f75;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.blog-button button:hover {
+    background: #1d2058;
+}
+
+/* Ajustes responsivos para la sección blog */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 60px 5%;
+        background-attachment: scroll; /* mejora rendimiento en móviles */
+    }
+
+    .blog-title h1 {
+        font-size: 28px;
+    }
+
+    .blog-title p {
+        font-size: 16px;
+    }
+}
+
+/* ================================================
+   12. CARRUSEL (SLIDER) para la página de inicio
+   ================================================ */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--blanco);
+    width: 90%;
+    z-index: 3;
+}
+
+.carousel-caption h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Botones siguiente / anterior */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Indicadores (puntos) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.carousel-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .indicator.active {
+    background-color: var(--caqui);
+    transform: scale(1.2);
+}
+
+/* Responsive para el carrusel */
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0 0.7rem;
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
     }
 }
