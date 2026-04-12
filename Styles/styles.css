@@ -815,3 +815,210 @@ footer {
         right: 10px;
     }
 }
+
+
+/* ================================================
+   13. NOSOTROS
+   ================================================ */
+
+.hero-nosotros {
+    position: relative;
+    height: 420px;
+    background-image: url("../img/Rescate.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-nosotros .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-nosotros h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-nosotros p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--caqui);
+}
+
+main.container {
+    margin-top: 60px;
+}
+
+.quienes-somos {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+}
+
+.quienes-somos h2,
+.historia-resumen h2,
+.valores h2,
+.ubicacion h2,
+.redes h2 {
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--azul);
+}
+
+.quienes-somos h2::after,
+.historia-resumen h2::after,
+.valores h2::after,
+.ubicacion h2::after,
+.redes h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin: 8px auto 0 auto;
+}
+
+.quienes-somos p {
+    line-height: 1.7;
+}
+
+.historia-resumen {
+    max-width: 850px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+    background: var(--gris-fondo);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.mision-vision,
+.motivacion-logros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.mision-vision .card,
+.motivacion-logros .card {
+    padding: 35px;
+}
+
+.valores {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.valores ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+}
+
+.valores li {
+    background: var(--caqui);
+    padding: 10px 18px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    font-weight: bold;
+    color: var(--rojo);
+    transition: 0.3s;
+}
+
+.valores li:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+.ubicacion {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border: none;
+    transition: transform 0.3s;
+}
+
+.mapa iframe:hover {
+    transform: scale(1.01);
+}
+
+.redes {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.redes-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-icons a {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: var(--sombra);
+    transition: 0.3s;
+}
+
+.redes-icons a:hover {
+    background-color: var(--rojo);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+
+    .hero-nosotros {
+        height: 260px;
+    }
+
+    .hero-nosotros h1 {
+        font-size: 1.8rem;
+    }
+
+    .mision-vision,
+    .motivacion-logros {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa iframe {
+        height: 250px;
+    }
+
+    .valores ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .historia-resumen {
+        padding: 30px 15px;
+    }
+}
