@@ -1,30 +1,31 @@
-
-<!--Información sobre las noticias y eventos de la institución, y futuras actividades que realizara la institución--> 
-
 <!DOCTYPE html>
-
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog || Escuela Nacional de Bomberos</title>
-    <link rel="stylesheet" href="Styles/styles.css">
+    <title>Escuela Nacional de Bomberos "Comandante Óscar Rodríguez Gómez"</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-    <header>
-    <div class="nav-container">
+
+<header>
+    <div class="nav-container"> 
         <a href="index.html" class="logo-wrapper">
             <img src="img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
             <div class="logo-text">
                 <span class="main-title">Escuela Nacional de Bomberos</span>
-                <span class="sub-title">"Óscar Rodríguez Gómez"</span>
+                <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
             </div>
         </a>
+
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Historia.html">Historia</a></li>
                 <li><a href="oferta.html">Oferta Académica</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="transparencia.html">Transparencia</a></li>
@@ -35,10 +36,95 @@
 </header>
 
 
-    <a href="index.html">Regresar al Inicio</a>
+<section class="blog-section">
 
-    
+    <div class="blog-title">
+        <h1>Noticias y Actividades</h1>
+        <p>Conoce las últimas actividades, eventos y logros de nuestra institución.</p>
+    </div>
+
+    <div class="blog-container" id="blogContainer">
+
+        <!-- NOTICIA 1 -->
+        <div class="blog-card">
+            <img src="img/Rescate.jpg" alt="Descenso de Torre Como entrenamiento de rescate">
+
+            <div class="blog-content">
+                <h3>Entrenamiento de Rescate</h3>
+
+                <p>
+                    Los estudiantes realizaron prácticas de rescate en diferentes escenarios de emergencia.
+                </p>
+
+                <p class="extra-text">
+                    Durante esta actividad los cadetes practicaron técnicas de evacuación,
+                    rescate en estructuras y trabajo en equipo bajo condiciones simuladas
+                    de emergencia.
+                </p>
+
+                <button class="leerMas">Leer más</button>
+            </div>
+        </div>
+
+
+        <!-- NOTICIA 2 -->
+        <div class="blog-card">
+            <img src="img/Extincion.jpg">
+
+            <div class="blog-content">
+                <h3>Simulacro de Incendio</h3>
+
+                <p>
+                    Se realizó un simulacro para mejorar la capacidad de respuesta ante emergencias.
+                </p>
+
+                <p class="extra-text">
+                    El simulacro incluyó evacuación, control del fuego y coordinación entre
+                    brigadas, permitiendo evaluar los protocolos de seguridad.
+                </p>
+
+                <button class="leerMas">Leer más</button>
+            </div>
+        </div>
+
+
+        <!-- NOTICIA 3 -->
+        <div class="blog-card">
+            <img src="img/Ascensos1.jpg">
+
+            <div class="blog-content">
+                <h3>Ascensos de Alumnos con Mando</h3>
+
+                <p>
+                    Los Alumnos recibieron formación especializada Para poder asumir responsabilidades de mando.
+                </p>
+                <br>
+                <p>
+                    Esta accion fue realizada a los alumnos del Undecimo grado y Duodecimo grado, quienes recibieron capacitación en liderazgo, toma de decisiones y 
+                    asi pode prepararlos para roles de mando en las diferentes situaciones de emergencia.
+                </p>
+
+                <p class="extra-text">
+                    La capacitación incluyó control de hemorragias, reanimación cardiopulmonar
+                    (RCP) y atención inmediata a víctimas antes del traslado hospitalario.
+                </p>
+
+                <button class="leerMas">Leer más</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="blog-button">
+        <button onclick="volveralinicio()">Volver al Inicio</button>
+    </div>
+
+</section>
+
+
+<script src="javascript/blog.js"></script>
+
 </body>
-
 </html>
 
