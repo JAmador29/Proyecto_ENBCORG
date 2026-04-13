@@ -1,12 +1,7 @@
-/* ================================================
-   ESCUELA NACIONAL DE BOMBEROS
-   Hoja de estilos principal — styles.css
-   ================================================ */
 
-
-/* ------------------------------------------------
+/*
    1. VARIABLES GLOBALES
-   ------------------------------------------------ */
+   */
 :root {
     --rojo: #a3141b;
     --rojo-osc: #7f1015;
@@ -18,9 +13,9 @@
 }
 
 
-/* ------------------------------------------------
+/* 
    2. RESET BASE
-   ------------------------------------------------ */
+   */
 *,
 *::before,
 *::after {
@@ -547,7 +542,7 @@ footer {
 /* FONDO DEL BLOG */
 .blog-section {
     padding: 80px 10%;
-    background-image: url("../img/Escoltas.JPG");
+    background-image: url("../Img/Escoltas.JPG");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -831,13 +826,13 @@ footer {
 .hero-nosotros {
     position: relative;
     height: 420px;
-    background-image: url("../img/Rescate.jpg");
+    background-image: url("../Img/Rescate.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .hero-nosotros.hero-oferta {
-    background-image: url("../img/competencias.jpg");
+    background-image: url("../Img/competencias.jpg");
 }
 
 .hero-nosotros .overlay {
