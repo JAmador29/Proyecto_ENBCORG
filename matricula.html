@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -8,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matricula || Escuela Nacional de Bomberos</title>
     <link rel="stylesheet" href="Styles/styles.css">
+    <script src="Js/matricula.js"></script>
 </head>
 
 <body>
@@ -39,102 +39,100 @@
     <div class="h2">
         <h2>Formulario de Proceso de Inscripción</h2>
 
-    <div class="nav-container">
-        <a href="index.html" class="logo-wrapper">
-            <img src="img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
-            <div class="logo-text">
-                <span class="main-title">Escuela Nacional de Bomberos</span>
-                <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
-            </div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="oferta.html">Oferta Académica</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="transparencia.html">Transparencia</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
+                <div class="logo-text">
+                    <span class="main-title">Escuela Nacional de Bomberos</span>
+                    <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="oferta.html">Oferta Académica</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="transparencia.html">Transparencia</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
 
-    </div>
+        </div>
 
-    <div class="contenedor">
+        <div class="contenedor">
 
-        <form id="formMatricula">
-            <label>Nombres:</label>
-            <input type="text" id="nombre" required>
+            <form id="formMatricula">
+                <label>Nombres:</label>
+                <input type="text" id="nombre" required>
 
-            <label>Apellidos:</label>
-            <input type="text" id="apellido" required>
+                <label>Apellidos:</label>
+                <input type="text" id="apellido" required>
 
-            <label>Número de Identidad:</label>
-            <input type="text" id="identidad" required>
+                <label>Número de Identidad:</label>
+                <input type="text" id="identidad" required>
 
-            <label>Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" required>
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
 
-            <label>Edad:</label>
-            <input type="number" id="edad" required>
+                <label>Edad:</label>
+                <input type="number" id="edad" required>
 
-            <label>Género:</label>
-            <select id="genero">
-                <option value="" disabled selected>Seleccionar género</option>
-                <option>Masculino</option>
-                <option>Femenino</option>
-            </select>
+                <label>Género:</label>
+                <select id="genero">
+                    <option value="" disabled selected>Seleccionar género</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
 
-            <label>Correo Electrónico:</label>
-            <input type="email" id="correo" required>
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correo" required>
 
-            <label>Teléfono:</label>
-            <input type="tel" id="telefono" required>
-
-
-            <label>Curso:</label>
-            <select id="curso">
-                <option value="" disabled selected>Seleccionar curso</option>
-                <option>Tercer Ciclo</option>
-                <option>Bachillerato</option>
-            </select>
-
-            <br><br>
-
-            <button type="submit" class="btn">Enviar</button>
-
-            <a href="index.html" class="btn">Regresar al Inicio</a>
-        </form>
-    </div>
+                <label>Teléfono:</label>
+                <input type="tel" id="telefono" required>
 
 
-    <div class="horarios">
+                <label>Curso:</label>
+                <select id="curso">
+                    <option value="" disabled selected>Seleccionar curso</option>
+                    <option>Tercer Ciclo</option>
+                    <option>Bachillerato</option>
+                </select>
 
-        <h3>Horarios de Atención</h3>
-        <p><strong>Lunes a Viernes:</strong> 7:00 AM - 4:00 PM</p>
-        <p><strong>Sábados:</strong> Área administrativa únicamente</p>
+                <br><br>
 
-    </div>
+                <button type="submit" class="btn">Enviar</button>
 
-    <script>
-        document.getElementById("formMatricula").addEventListener("submit", function (e) {
-            e.preventDefault();
+                <a href="index.html" class="btn">Regresar al Inicio</a>
+            </form>
+        </div>
 
-            let nombre = document.getElementById("nombre").value;
-            let apellido = document.getElementById("apellido").value;
 
-            alert("Matrícula enviada correctamente de: " + nombre + " " + apellido);
+        <div class="horarios">
 
-            this.reset();
-        });
-    </script>
+            <h3>Horarios de Atención</h3>
+            <p><strong>Lunes a Viernes:</strong> 7:00 AM - 4:00 PM</p>
+            <p><strong>Sábados:</strong> Área administrativa únicamente</p>
 
-    <footer>
-        <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
-    </footer>
+        </div>
+
+        <script>
+            document.getElementById("formMatricula").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let nombre = document.getElementById("nombre").value;
+                let apellido = document.getElementById("apellido").value;
+
+                alert("Matrícula enviada correctamente de: " + nombre + " " + apellido);
+
+                this.reset();
+            });
+        </script>
+
+        <footer>
+            <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+        </footer>
 
 </body>
+
 </html>
-
-
-

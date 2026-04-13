@@ -8,20 +8,22 @@
    1. VARIABLES GLOBALES
    ------------------------------------------------ */
 :root {
-    --rojo:       #a3141b;
-    --rojo-osc:   #7f1015;
-    --azul:       #2A306F;
-    --caqui:      #E0D8B0;
-    --blanco:     #ffffff;
+    --rojo: #a3141b;
+    --rojo-osc: #7f1015;
+    --azul: #2A306F;
+    --caqui: #E0D8B0;
+    --blanco: #ffffff;
     --gris-fondo: #f5f5f5;
-    --sombra:     0 4px 16px rgba(0, 0, 0, 0.10);
+    --sombra: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
 
 /* ------------------------------------------------
    2. RESET BASE
    ------------------------------------------------ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -280,7 +282,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-.historia-bloque p + p {
+.historia-bloque p+p {
     margin-top: 14px;
 }
 
@@ -666,7 +668,8 @@ footer {
 @media (max-width: 768px) {
     .blog-section {
         padding: 60px 5%;
-        background-attachment: scroll; /* mejora rendimiento en móviles */
+        background-attachment: scroll;
+        /* mejora rendimiento en móviles */
     }
 
     .blog-title h1 {
@@ -801,16 +804,20 @@ footer {
     .carousel-caption h1 {
         font-size: 1.8rem;
     }
+
     .carousel-caption p {
         font-size: 1rem;
     }
+
     .carousel-btn {
         font-size: 1.5rem;
         padding: 0 0.7rem;
     }
+
     .prev {
         left: 10px;
     }
+
     .next {
         right: 10px;
     }
@@ -849,7 +856,7 @@ footer {
 .hero-nosotros h1 {
     font-size: 3.5rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
@@ -1120,4 +1127,186 @@ main.container {
         height: 180px;
     }
 
+}
+
+
+/* ================================================
+   15. FORMULARIO DE MATRÍCULA
+   ================================================ */
+
+.h2 {
+    background-color: var(--gris-fondo);
+    padding: 40px 0 0;
+}
+
+.h2>h2 {
+    text-align: center;
+    color: var(--azul);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 20px;
+}
+
+.h2>h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin: 10px auto 0;
+}
+
+
+.h2 .nav-container {
+    display: none;
+}
+
+
+.contenedor {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: var(--blanco);
+    border-top: 6px solid var(--rojo);
+    border-radius: 6px;
+    box-shadow: var(--sombra);
+    padding: 40px 48px;
+}
+
+#formMatricula {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#formMatricula label {
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+#formMatricula input,
+#formMatricula select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    color: #1c1c1c;
+    background-color: var(--blanco);
+    transition: border-color 0.25s;
+    outline: none;
+}
+
+#formMatricula input:focus,
+#formMatricula select:focus {
+    border-color: var(--azul);
+}
+
+/* Estado de error */
+#formMatricula input.invalid,
+#formMatricula select.invalid {
+    border-color: var(--rojo);
+    background-color: #fff5f5;
+}
+
+.error-msg {
+    display: none;
+    font-size: 0.76rem;
+    color: var(--rojo);
+    margin-top: 3px;
+    padding-left: 2px;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+#formMatricula .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+#formMatricula .btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#formMatricula .btn-secondary {
+    background-color: var(--azul);
+}
+
+#formMatricula .btn-secondary:hover {
+    background-color: #1e2455;
+}
+
+.success-banner {
+    display: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-left: 4px solid #2e7d32;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.success-banner.show {
+    display: block;
+}
+
+.horarios {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border-left: 5px solid var(--rojo);
+    border-radius: 4px;
+    padding: 24px 32px;
+    box-shadow: var(--sombra);
+}
+
+.horarios h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--caqui);
+    margin-bottom: 14px;
+}
+
+.horarios p {
+    font-size: 0.92rem;
+    line-height: 2;
+}
+
+.horarios strong {
+    color: var(--caqui);
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 24px 16px;
+        padding: 28px 20px;
+    }
+
+    #formMatricula .btn-row {
+        flex-direction: column;
+    }
+
+    .horarios {
+        margin: 0 16px 32px;
+        padding: 20px;
+    }
 }
