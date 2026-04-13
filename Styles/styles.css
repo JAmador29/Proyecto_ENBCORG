@@ -875,12 +875,13 @@ main.container {
 .historia-resumen h2,
 .valores h2,
 .ubicacion h2,
-.redes h2 {
+.redes h2,
+.oferta-intro h2,
+.oferta-docentes h2 {
     font-size: 1.8rem;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
     color: var(--azul);
+    margin-bottom: 15px;
+    position: relative;
 }
 
 .quienes-somos h2::after,
@@ -1027,6 +1028,7 @@ main.container {
     }
 }
 
+
 /* ================================================
    14. OFERTA
    ================================================ */
@@ -1035,12 +1037,6 @@ main.container {
     max-width: 900px;
     margin: 0 auto 80px auto;
     text-align: center;
-}
-
-.oferta-intro h2 {
-    font-size: 1.8rem;
-    color: var(--azul);
-    margin-bottom: 15px;
 }
 
 .oferta-intro p {
@@ -1079,11 +1075,6 @@ main.container {
     max-width: 800px;
     margin: 0 auto 80px auto;
     text-align: center;
-}
-
-.oferta-docentes h2 {
-    color: var(--azul);
-    margin-bottom: 15px;
 }
 
 .oferta-beneficios {
