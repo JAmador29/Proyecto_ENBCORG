@@ -1,23 +1,17 @@
-/*
-   1. VARIABLES GLOBALES
-   */
+/* ENBCORG*/
+/*   1.VARIABLES GLOBALES*/
 :root {
-    --rojo: #a3141b;
-    --rojo-osc: #7f1015;
-    --azul: #2A306F;
-    --caqui: #E0D8B0;
-    --blanco: #ffffff;
+    --rojo:       #a3141b;
+    --rojo-osc:   #7f1015;
+    --azul:       #2A306F;
+    --caqui:      #E0D8B0;
+    --blanco:     #ffffff;
     --gris-fondo: #f5f5f5;
-    --sombra: 0 4px 16px rgba(0, 0, 0, 0.10);
+    --sombra:     0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
-
-/* 
-   2. RESET BASE
-   */
-*,
-*::before,
-*::after {
+/* 2. RESET BASE*/
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -30,9 +24,7 @@ body {
 }
 
 
-/* ------------------------------------------------
-   3. HEADER Y NAVEGACIÓN
-   ------------------------------------------------ */
+/*3. HEADER Y NAVEGACIÓN*/
 header {
     background-color: var(--azul);
     padding: 10px 40px;
@@ -42,6 +34,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo-wrapper {
@@ -76,6 +69,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -97,9 +91,7 @@ nav ul li a:hover {
 }
 
 
-/* ------------------------------------------------
-   4. HERO (compartido por todas las páginas)
-   ------------------------------------------------ */
+/*4. HERO (compartido por todas las páginas)*/
 .hero-section {
     position: relative;
     width: 100%;
@@ -148,26 +140,123 @@ nav ul li a:hover {
     margin-bottom: 8px;
 }
 
-
-/* ------------------------------------------------
-   5. TARJETAS — INDEX
-   ------------------------------------------------ */
-.container {
-    padding: 0 40px;
+/* Hero de Nosotros / Oferta */
+.hero-nosotros {
+    position: relative;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
 }
 
-.cards-overlap {
-    margin-top: -80px;
+.hero-nosotros.hero-oferta {
+    background-image: url("../Img/competencias.jpg");
+}
+
+.hero-nosotros .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero-nosotros h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-nosotros p {
+    color: var(--caqui);
+}
+
+/* Carrusel de imágenes en el hero */
+.carousel-container {
     position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--blanco);
+    width: 90%;
+    z-index: 3;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--blanco);
+    border: none;
+    font-size: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
     z-index: 10;
 }
 
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
 }
 
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: var(--caqui);
+    transform: scale(1.2);
+}
+
+
+/*5. TARJETAS REUTILIZABLES*/
 .card {
     background-color: var(--caqui);
     padding: 30px;
@@ -203,31 +292,127 @@ nav ul li a:hover {
 }
 
 
-/* ------------------------------------------------
-   6. BOTÓN
-   ------------------------------------------------ */
+/* 6. BOTÓN */
 .btn {
     display: inline-block;
-    margin-top: 15px;
     background-color: var(--rojo);
     color: var(--blanco);
     padding: 10px 15px;
     text-decoration: none;
-    font-size: 0.9rem;
     border-radius: 4px;
-    width: fit-content;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .btn:hover {
     background-color: var(--rojo-osc);
 }
 
+.btn-secondary {
+    background-color: var(--azul);
+}
 
-/* ------------------------------------------------
-   7. HISTORIA
-   ------------------------------------------------ */
+.btn-secondary:hover {
+    background-color: #1e2455;
+}
+
+
+/*7. INICIO — Carrusel de tarjetas */
+.container {
+    padding: 0 40px;
+}
+
+.cards-overlap {
+    margin-top: -80px;
+    position: relative;
+    z-index: 10;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    padding: 0 60px;
+    margin-top: -80px;
+    z-index: 10;
+}
+
+.carrusel-track-outer {
+    overflow: hidden;
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carrusel-track .card {
+    flex: 0 0 calc(33.333% - 14px);
+    margin-right: 20px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); 
+    color: var(--blanco);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--rojo);
+}
+
+.carousel-btn.prev {
+    left: 20px; 
+}
+
+.carousel-btn.next {
+    right: 20px; 
+}
+.carrusel-btn:disabled {
+    background-color: #ccc;
+    cursor: default;
+}
+
+.carrusel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.carrusel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carrusel-dots button.activo {
+    background-color: var(--rojo);
+}
+
+/*8. HISTORIA*/
 .historia-contenido {
     max-width: 860px;
     margin: 60px auto;
@@ -242,6 +427,13 @@ nav ul li a:hover {
     margin-bottom: 8px;
 }
 
+.historia-contenido h3 {
+    font-size: 1.4rem;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .titulo-linea {
     width: 60px;
     height: 3px;
@@ -249,7 +441,6 @@ nav ul li a:hover {
     margin-bottom: 40px;
 }
 
-/* Cada bloque es una tarjeta blanca con acento rojo */
 .historia-bloque {
     background-color: var(--blanco);
     border-left: 5px solid var(--rojo);
@@ -264,7 +455,6 @@ nav ul li a:hover {
     color: var(--blanco);
     font-size: 0.72rem;
     font-weight: bold;
-    letter-spacing: 2px;
     text-transform: uppercase;
     padding: 4px 12px;
     margin-bottom: 14px;
@@ -276,11 +466,10 @@ nav ul li a:hover {
     color: #333;
 }
 
-.historia-bloque p+p {
+.historia-bloque p + p {
     margin-top: 14px;
 }
 
-/* Bloque de cierre — fondo azul */
 .historia-cierre {
     margin-top: 12px;
     padding: 28px 32px;
@@ -300,9 +489,315 @@ nav ul li a:hover {
 }
 
 
-/* ------------------------------------------------
-   8. CONTACTO
-   ------------------------------------------------ */
+/*9. NOSOTROS*/
+.quienes-somos, .historia-resumen, .valores,
+.ubicacion, .redes, .oferta-intro, .oferta-docentes {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+}
+
+.quienes-somos h2, .historia-resumen h2, .valores h2,
+.ubicacion h2, .redes h2, .oferta-intro h2, .oferta-docentes h2 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    position: relative;
+}
+
+.quienes-somos h2::after, .historia-resumen h2::after,
+.valores h2::after, .ubicacion h2::after, .redes h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin: 8px auto 0;
+}
+
+.historia-resumen {
+    background-color: var(--gris-fondo);
+    padding: 40px 30px;
+    border-radius: 10px;
+}
+
+.mision-vision,
+.motivacion-logros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.valores ul,
+.oferta-beneficios ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+}
+
+.valores li,
+.oferta-beneficios li {
+    background-color: var(--caqui);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--rojo);
+    transition: 0.3s;
+}
+
+.valores li:hover,
+.oferta-beneficios li:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    border: none;
+}
+
+.redes-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-icons a {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes-icons a:hover {
+    background-color: var(--rojo);
+    transform: translateY(-3px);
+}
+
+
+/*10. OFERTA ACADÉMICA*/
+.oferta-programa {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.oferta-card {
+    max-width: 700px;
+    width: 100%;
+}
+
+.oferta-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+
+/*11. TRANSPARENCIA*/
+.transparencia-header {
+    text-align: center;
+    padding: 50px 40px 20px;
+}
+
+.transparencia-header h2 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.transparencia-header .titulo-linea {
+    margin: 0 auto 12px;
+}
+
+.transparencia-header p {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Tarjetas debajo del título */
+.transparencia-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px 40px 60px;
+}
+
+.transparencia-bloque {
+    flex: 0 1 260px;
+    background-color: var(--blanco);
+    border-left: 5px solid var(--rojo);
+    box-shadow: var(--sombra);
+    padding: 1.2rem;
+    border-radius: 0 8px 8px 0;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.transparencia-bloque:hover {
+    transform: translateY(-5px);
+}
+
+.transparencia-bloque .anio {
+    display: inline-block;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.transparencia-bloque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 1px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s;
+}
+
+.transparencia-bloque img:hover {
+    transform: scale(1.02);
+}
+
+.transparencia-bloque p {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+
+/*12. FORMULARIO DE MATRÍCULA */
+.form-header {
+    background-color: var(--gris-fondo);
+    padding: 40px 0 0;
+}
+
+.form-header h2 {
+    text-align: center;
+    color: var(--azul);
+    font-size: 1.8rem;
+}
+
+.form-header h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin: 10px auto 0;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: var(--blanco);
+    border-top: 6px solid var(--rojo);
+    border-radius: 6px;
+    box-shadow: var(--sombra);
+    padding: 40px 48px;
+}
+
+#formMatricula {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#formMatricula label {
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-top: 14px;
+}
+
+#formMatricula input,
+#formMatricula select {
+    padding: 10px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+#formMatricula input:focus,
+#formMatricula select:focus {
+    border-color: var(--azul);
+    outline: none;
+}
+
+.invalid {
+    border-color: var(--rojo) !important;
+    background-color: #fff5f5;
+}
+
+.error-msg {
+    display: none;
+    font-size: 0.76rem;
+    color: var(--rojo);
+}
+
+.error-msg.show {
+    display: block;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.success-banner {
+    display: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.success-banner.show {
+    display: block;
+}
+
+.horarios {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border-left: 5px solid var(--rojo);
+    padding: 24px 32px;
+}
+
+.horarios h3 {
+    color: var(--caqui);
+    margin-bottom: 14px;
+}
+
+.horarios strong {
+    color: var(--caqui);
+}
+
+
+/*13. CONTACTO*/
 .contacto-seccion {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -457,105 +952,19 @@ nav ul li a:hover {
 }
 
 
-/* ------------------------------------------------
-   9. FOOTER
-   ------------------------------------------------ */
-footer {
-    margin-top: 40px;
-    text-align: center;
-    padding: 20px;
-    background-color: var(--gris-fondo);
-    font-size: 14px;
-    color: #555;
-}
-
-
-/* ------------------------------------------------
-   10. RESPONSIVO
-   ------------------------------------------------ */
-@media (max-width: 768px) {
-
-    header {
-        padding: 10px 20px;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-section {
-        height: 300px;
-    }
-
-    .hero-overlay h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-overlay p {
-        font-size: 1rem;
-    }
-
-    .cards-overlap {
-        margin-top: 20px;
-    }
-
-    .container {
-        padding: 0 20px;
-    }
-
-    .historia-contenido {
-        padding: 0 20px;
-        margin: 40px auto;
-    }
-
-    .historia-bloque {
-        padding: 18px 20px;
-    }
-
-    .contacto-seccion {
-        grid-template-columns: 1fr;
-    }
-
-    .contacto-lateral,
-    .contacto-horario {
-        padding: 40px 24px;
-    }
-
-    .horario-lista li {
-        grid-template-columns: 16px 80px 1fr;
-    }
-}
-
-
-/* ================================================
-   11. SECCIÓN DE BLOG (estilos integrados)
-   ================================================ */
-
-/* FONDO DEL BLOG */
+/* 14. BLOG*/
 .blog-section {
     padding: 80px 10%;
     background-image: url("../Img/Escoltas.JPG");
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
     position: relative;
 }
 
-/* Capa oscura para que se lea el texto */
 .blog-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.6);
 }
 
@@ -566,22 +975,16 @@ footer {
     z-index: 2;
 }
 
-/* TÍTULO DEL BLOG */
 .blog-title {
     text-align: center;
+    color: var(--blanco);
     margin-bottom: 40px;
-    color: white;
 }
 
 .blog-title h1 {
     font-size: 40px;
 }
 
-.blog-title p {
-    font-size: 18px;
-}
-
-/* TARJETAS DEL BLOG */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -589,10 +992,9 @@ footer {
 }
 
 .blog-card {
-    background: white;
+    background-color: var(--blanco);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
 
@@ -610,691 +1012,84 @@ footer {
     padding: 20px;
 }
 
-.blog-content h3 {
-    color: #2c2f75;
-}
-
-.blog-content p {
-    font-size: 14px;
-}
-
-/* TEXTO OCULTO (para leer más) */
-.extra-text {
-    display: none;
-    margin-top: 10px;
-}
-
-/* BOTONES DENTRO DE LAS TARJETAS */
 .blog-content button {
-    margin-top: 10px;
-    background: #c62828;
-    color: white;
+    background-color: var(--rojo);
+    color: var(--blanco);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.blog-content button:hover {
-    background: #a61c1c;
+.extra-text {
+    display: none;
+    margin-top: 10px;
 }
 
-/* BOTÓN PRINCIPAL DEL BLOG */
 .blog-button {
     text-align: center;
     margin-top: 40px;
 }
 
 .blog-button button {
-    background: #2c2f75;
-    color: white;
-    border: none;
+    background-color: var(--azul);
+    color: var(--blanco);
     padding: 12px 25px;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
 }
 
-.blog-button button:hover {
-    background: #1d2058;
-}
 
-/* Ajustes responsivos para la sección blog */
-@media (max-width: 768px) {
-    .blog-section {
-        padding: 60px 5%;
-        background-attachment: scroll;
-        /* mejora rendimiento en móviles */
-    }
-
-    .blog-title h1 {
-        font-size: 28px;
-    }
-
-    .blog-title p {
-        font-size: 16px;
-    }
-}
-
-/* ================================================
-   12. CARRUSEL (SLIDER) para la página de inicio
-   ================================================ */
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.carousel-slides {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-    z-index: 1;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    z-index: 2;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-    display: block;
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/*  15. FOOTER*/
+footer {
+    margin-top: 40px;
     text-align: center;
-    color: var(--blanco);
-    width: 90%;
-    z-index: 3;
-}
-
-.carousel-caption h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.carousel-caption p {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-/* Botones siguiente / anterior */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    padding: 0 1rem;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 20px;
-}
-
-.next {
-    right: 20px;
-}
-
-/* Indicadores (puntos) */
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    z-index: 10;
-}
-
-.carousel-indicators .indicator {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.carousel-indicators .indicator.active {
-    background-color: var(--caqui);
-    transform: scale(1.2);
-}
-
-/* Responsive para el carrusel */
-@media (max-width: 768px) {
-    .carousel-caption h1 {
-        font-size: 1.8rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem;
-    }
-
-    .carousel-btn {
-        font-size: 1.5rem;
-        padding: 0 0.7rem;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
+    padding: 20px;
+    background-color: var(--gris-fondo);
+    font-size: 14px;
+    color: #555;
 }
 
 
-/* ================================================
-   13. NOSOTROS
-   ================================================ */
+/*16. RESPONSIVO */
+@media (max-width: 720px) {
 
-.hero-nosotros {
-    position: relative;
-    height: 420px;
-    background-image: url("../Img/Rescate.jpg");
-    background-size: cover;
-    background-position: center;
-}
+    header { padding: 10px 20px; }
+    .nav-container { flex-direction: column; align-items: flex-start; gap: 10px; }
+    nav ul { flex-direction: column; gap: 10px; }
 
-.hero-nosotros.hero-oferta {
-    background-image: url("../Img/competencias.jpg");
-}
+    .hero-section,
+    .carousel-container { height: 300px; }
+    .hero-overlay h1,
+    .carousel-caption h1 { font-size: 1.8rem; }
+    .hero-nosotros { height: 260px; }
+    .hero-nosotros h1 { font-size: 1.8rem; }
 
-.hero-nosotros .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--blanco);
-    text-align: center;
-    padding: 0 20px;
-}
+    .cards-overlap { margin-top: 20px; }
+    .container { padding: 0 20px; }
+    .carrusel-wrapper { padding: 0 44px; margin-top: 20px; }
+    .carrusel-track .card { flex: 0 0 100%; }
 
-.hero-nosotros h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.hero-nosotros p {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    color: var(--caqui);
-}
-
-main.container {
-    margin-top: 60px;
-}
-
-.quienes-somos {
-    max-width: 900px;
-    margin: 0 auto 80px auto;
-    text-align: center;
-}
-
-.quienes-somos h2,
-.historia-resumen h2,
-.valores h2,
-.ubicacion h2,
-.redes h2,
-.oferta-intro h2,
-.oferta-docentes h2 {
-    font-size: 1.8rem;
-    color: var(--azul);
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.quienes-somos h2::after,
-.historia-resumen h2::after,
-.valores h2::after,
-.ubicacion h2::after,
-.redes h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--rojo);
-    margin: 8px auto 0 auto;
-}
-
-.quienes-somos p {
-    line-height: 1.7;
-}
-
-.historia-resumen {
-    max-width: 850px;
-    margin: 0 auto 80px auto;
-    text-align: center;
-    background: var(--gris-fondo);
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-}
-
-.mision-vision,
-.motivacion-logros {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 80px;
-}
-
-.mision-vision .card,
-.motivacion-logros .card {
-    padding: 35px;
-}
-
-.valores {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.valores ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    list-style: none;
-}
-
-.valores li {
-    background: var(--caqui);
-    padding: 10px 18px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-    font-weight: bold;
-    color: var(--rojo);
-    transition: 0.3s;
-}
-
-.valores li:hover {
-    background: var(--rojo);
-    color: var(--blanco);
-}
-
-.ubicacion {
-    margin-bottom: 80px;
-    text-align: center;
-}
-
-.mapa iframe {
-    width: 100%;
-    height: 350px;
-    border-radius: 8px;
-    box-shadow: var(--sombra);
-    border: none;
-    transition: transform 0.3s;
-}
-
-.mapa iframe:hover {
-    transform: scale(1.01);
-}
-
-.redes {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.redes-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.redes-icons a {
-    background-color: var(--azul);
-    color: var(--blanco);
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: var(--sombra);
-    transition: 0.3s;
-}
-
-.redes-icons a:hover {
-    background-color: var(--rojo);
-    transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-
-    .hero-nosotros {
-        height: 260px;
-    }
-
-    .hero-nosotros h1 {
-        font-size: 1.8rem;
-    }
+    .historia-contenido { padding: 0 20px; margin: 40px auto; }
+    .historia-bloque { padding: 18px 20px; }
 
     .mision-vision,
-    .motivacion-logros {
-        grid-template-columns: 1fr;
-    }
+    .motivacion-logros { grid-template-columns: 1fr; }
+    .mapa iframe { height: 250px; }
 
-    .mapa iframe {
-        height: 250px;
-    }
+    .transparencia-header { padding: 30px 20px 10px; }
+    .transparencia-contenido { padding: 20px 16px 40px; }
+    .transparencia-bloque { flex: 1 1 100%; max-width: 300px; }
 
-    .valores ul {
-        flex-direction: column;
-        align-items: center;
-    }
+    .contenedor { margin: 24px 16px; padding: 28px 20px; }
+    .btn-row { flex-direction: column; }
 
-    .historia-resumen {
-        padding: 30px 15px;
-    }
-}
+    .contacto-seccion { grid-template-columns: 1fr; }
+    .contacto-lateral,
+    .contacto-horario { padding: 40px 24px; }
+    .horario-lista li { grid-template-columns: 16px 80px 1fr; }
 
-
-/* ================================================
-   14. OFERTA
-   ================================================ */
-
-.oferta-intro {
-    max-width: 900px;
-    margin: 0 auto 80px auto;
-    text-align: center;
-}
-
-.oferta-intro p {
-    line-height: 1.7;
-}
-
-.oferta-programa {
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-}
-
-.oferta-card {
-    max-width: 700px;
-    width: 100%;
-}
-
-.oferta-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 15px 0;
-}
-
-.oferta-programa ul {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-.oferta-programa li {
-    margin-bottom: 6px;
-}
-
-.oferta-docentes {
-    max-width: 800px;
-    margin: 0 auto 80px auto;
-    text-align: center;
-}
-
-.oferta-beneficios {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.oferta-beneficios h2 {
-    color: var(--azul);
-    margin-bottom: 20px;
-}
-
-.oferta-beneficios ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.oferta-beneficios li {
-    background: var(--caqui);
-    padding: 10px 18px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-    font-weight: bold;
-    color: var(--rojo);
-    transition: 0.3s;
-}
-
-.oferta-beneficios li:hover {
-    background: var(--rojo);
-    color: var(--blanco);
-}
-
-.oferta-card .btn {
-    margin-top: 15px;
-}
-
-@media (max-width: 768px) {
-
-    .oferta-img {
-        height: 180px;
-    }
-
-}
-
-
-/* ================================================
-   15. FORMULARIO DE MATRÍCULA
-   ================================================ */
-
-.form-header {
-    background-color: var(--gris-fondo);
-    padding: 40px 0 0;
-}
-
-.form-header > h2 {
-    text-align: center;
-    color: var(--azul);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 0 20px;
-}
-
-.form-header > h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--rojo);
-    margin: 10px auto 0;
-}
-
-.contenedor {
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: var(--blanco);
-    border-top: 6px solid var(--rojo);
-    border-radius: 6px;
-    box-shadow: var(--sombra);
-    padding: 40px 48px;
-}
-
-#formMatricula {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-#formMatricula label {
-    font-size: 0.78rem;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--azul);
-    margin-top: 14px;
-    margin-bottom: 4px;
-}
-
-#formMatricula input,
-#formMatricula select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #ccc;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-family: Arial, sans-serif;
-    color: #1c1c1c;
-    background-color: var(--blanco);
-    transition: border-color 0.25s;
-    outline: none;
-}
-
-#formMatricula input:focus,
-#formMatricula select:focus {
-    border-color: var(--azul);
-}
-
-/* Estado de error */
-#formMatricula input.invalid,
-#formMatricula select.invalid {
-    border-color: var(--rojo);
-    background-color: #fff5f5;
-}
-
-.error-msg {
-    display: none;
-    font-size: 0.76rem;
-    color: var(--rojo);
-    margin-top: 3px;
-    padding-left: 2px;
-}
-
-.error-msg.show {
-    display: block;
-}
-
-#formMatricula .btn-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-}
-
-#formMatricula .btn {
-    flex: 1;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-#formMatricula .btn-secondary {
-    background-color: var(--azul);
-}
-
-#formMatricula .btn-secondary:hover {
-    background-color: #1e2455;
-}
-
-.success-banner {
-    display: none;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #a5d6a7;
-    border-left: 4px solid #2e7d32;
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-size: 0.9rem;
-    margin-bottom: 16px;
-}
-
-.success-banner.show {
-    display: block;
-}
-
-.horarios {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    background-color: var(--azul);
-    color: var(--blanco);
-    border-left: 5px solid var(--rojo);
-    border-radius: 4px;
-    padding: 24px 32px;
-    box-shadow: var(--sombra);
-}
-
-.horarios h3 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--caqui);
-    margin-bottom: 14px;
-}
-
-.horarios p {
-    font-size: 0.92rem;
-    line-height: 2;
-}
-
-.horarios strong {
-    color: var(--caqui);
-}
-
-@media (max-width: 768px) {
-    .contenedor {
-        margin: 24px 16px;
-        padding: 28px 20px;
-    }
-
-    #formMatricula .btn-row {
-        flex-direction: column;
-    }
-
-    .horarios {
-        margin: 0 16px 32px;
-        padding: 20px;
-    }
+    .blog-section { padding: 60px 5%; background-attachment: scroll; }
+    .blog-title h1 { font-size: 28px; }
 }

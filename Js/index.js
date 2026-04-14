@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentIndex = 0;
     let autoInterval;
-    const AUTO_TIME = 3000; // 3 segundos entre cambios
+    const AUTO_TIME = 3000; 
     
     // Crear puntos indicadores
     if (indicatorsContainer) {
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     const indicators = document.querySelectorAll('.indicator');
     
-    // Mostrar slide según índice
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index >= slides.length) index = 0;
         currentIndex = index;
         showSlide(currentIndex);
-        resetAutoSlide(); // Reinicia el contador automático
+        resetAutoSlide(); 
     }
     
     function nextSlide() { goToSlide(currentIndex + 1); }
@@ -57,18 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoSlide();
     }
     
-    // Asignar eventos a botones
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     
-    // Iniciar carrusel
     showSlide(0);
     startAutoSlide();
     
-    // Pausar auto-desplazamiento cuando el mouse está encima (opcional)
     const carousel = document.querySelector('.carousel-container');
     if (carousel) {
         carousel.addEventListener('mouseenter', () => clearInterval(autoInterval));
         carousel.addEventListener('mouseleave', startAutoSlide);
     }
 });
+
