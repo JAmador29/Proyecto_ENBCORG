@@ -1055,41 +1055,110 @@ footer {
 /*16. RESPONSIVO */
 @media (max-width: 720px) {
 
-    header { padding: 10px 20px; }
-    .nav-container { flex-direction: column; align-items: flex-start; gap: 10px; }
-    nav ul { flex-direction: column; gap: 10px; }
+    header { 
+        padding: 10px 20px; 
+    }
+
+    .nav-container { 
+        flex-direction: column; align-items: flex-start; gap: 10px; 
+    }
+
+    nav ul { 
+        flex-direction: column; gap: 10px; }
+
 
     .hero-section,
-    .carousel-container { height: 300px; }
+    .carousel-container { 
+        height: 300px; 
+    }
+
     .hero-overlay h1,
-    .carousel-caption h1 { font-size: 1.8rem; }
-    .hero-nosotros { height: 260px; }
-    .hero-nosotros h1 { font-size: 1.8rem; }
+    .carousel-caption h1 { 
+        font-size: 1.8rem; 
+    }
 
-    .cards-overlap { margin-top: 20px; }
-    .container { padding: 0 20px; }
-    .carrusel-wrapper { padding: 0 44px; margin-top: 20px; }
-    .carrusel-track .card { flex: 0 0 100%; }
+    .hero-nosotros { height: 260px; 
+    }
 
-    .historia-contenido { padding: 0 20px; margin: 40px auto; }
-    .historia-bloque { padding: 18px 20px; }
+    .hero-nosotros h1 { 
+        font-size: 1.8rem; 
+    }
+
+    .cards-overlap { 
+        margin-top: 20px; 
+    }
+
+    .container { 
+        padding: 0 20px; 
+    }
+
+    .carrusel-wrapper { 
+        padding: 0 44px; 
+        margin-top: 20px; 
+    }
+
+    .carrusel-track .card { 
+        flex: 0 0 100%; 
+    }
+
+    .historia-contenido { 
+        padding: 0 20px; 
+        margin: 40px auto; 
+    }
+
+    .historia-bloque { 
+        padding: 18px 20px; 
+    }
 
     .mision-vision,
-    .motivacion-logros { grid-template-columns: 1fr; }
-    .mapa iframe { height: 250px; }
+    .motivacion-logros { 
+        grid-template-columns: 1fr; 
+    }
 
-    .transparencia-header { padding: 30px 20px 10px; }
-    .transparencia-contenido { padding: 20px 16px 40px; }
-    .transparencia-bloque { flex: 1 1 100%; max-width: 300px; }
+    .mapa iframe { 
+        height: 250px; 
+    }
 
-    .contenedor { margin: 24px 16px; padding: 28px 20px; }
-    .btn-row { flex-direction: column; }
+    .transparencia-header { 
+        padding: 30px 20px 10px; 
+    }
+    .transparencia-contenido { 
+        padding: 20px 16px 40px; 
+    }
+    .transparencia-bloque { 
+        flex: 1 1 100%; 
+        max-width: 300px; 
+    }
 
-    .contacto-seccion { grid-template-columns: 1fr; }
+    .contenedor { 
+        margin: 24px 16px; 
+        padding: 28px 20px; 
+    }
+
+    .btn-row { 
+        flex-direction: column; 
+    }
+
+
+    .contacto-seccion { 
+        grid-template-columns: 1fr; 
+    }
+
     .contacto-lateral,
-    .contacto-horario { padding: 40px 24px; }
-    .horario-lista li { grid-template-columns: 16px 80px 1fr; }
+    .contacto-horario { 
+        padding: 40px 24px; 
+    }
 
-    .blog-section { padding: 60px 5%; background-attachment: scroll; }
-    .blog-title h1 { font-size: 28px; }
+    .horario-lista li { 
+        grid-template-columns: 16px 80px 1fr; 
+    }
+
+    .blog-section { 
+        padding: 60px 5%; 
+        background-attachment: scroll; 
+    }
+
+    .blog-title h1 { 
+        font-size: 28px;
+    }
 }
