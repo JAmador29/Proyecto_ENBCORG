@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia | Escuela Nacional de Bomberos "C.O.R.G"</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/noticias.css">
+</head>     
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="../index.html" class="logo-wrapper">  
+            <img src="../Img/logo.png" alt="Logo" class="nav-logo">
+            <div class="logo-text">
+                <span class="main-title">Escuela Nacional de Bomberos</span>
+                <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="noticia-hero">
+        <img src="../Img/Ascensos1.jpg" alt="Ascensos de Alumnos">
+        <div class="noticia-hero-overlay">
+            <span class="noticia-categoria">Institucional</span>
+            <h1 id="noticia-titulo">Ascensos de Alumnos Con Mando</h1>
+            <div class="noticia-meta-hero">
+                <span><b>10 de abril, 2026</b></span>
+                <span><b>Comunicación Institucional</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <div class="noticia-layout">
+
+        <!-- COLUMNA PRINCIPAL -->
+        <article class="noticia-main">
+            <div class="noticia-card">
+                <div class="noticia-card-body">
+
+                    <p class="noticia-intro">
+                        La excelencia y la disciplina rindieron frutos en una jornada marcada por el honor. 
+                        Bajo la mirada atenta de la máxima cúpula institucional, alumnos de undécimo y duodécimo grado recibieron sus 
+                        ascensos de mando, asumiendo la responsabilidad de guiar con el ejemplo y liderar las futuras generaciones de 
+                        alumnos del BTPB.
+                    </p>
+
+                    <div class="noticia-contenido">
+                        <p>
+                          El evento contó con la distinguida presencia del General de Bomberos Raúl Edgardo Martínez A., el Coronel Arturo Humberto Sevilla R., 
+                          y el Teniente Coronel de Bomberos y Lic. Lenin Mauricio Lopez R. como director del centro educativo,
+                          quienes, junto al cuerpo docente, oficializaron la entrega de insignias. Estos nuevos rangos no solo representan un ascenso jerárquico, 
+                          sino un compromiso inquebrantable con el servicio y la protección de la nación. La ceremonia subrayó la importancia de la cadena de mando y 
+                          la formación de líderes íntegros dentro de la Escuela Nacional.
+                        </p>
+
+                        <blockquote>
+                          «El mando no es un privilegio, sino un compromiso sagrado con la disciplina y el servicio a la patria.»
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <!-- Galería -->
+                <div class="noticia-galeria">
+                    <div class="gal-item">
+                        <img src="../Img/A1/ascensos7.jpg" alt="Foto 3">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/A1/Ascensos4.jpg" alt="Foto 4">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/A1/Ascensos2.jpg" alt="Foto 5">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/A1/Ascensos9.jpg" alt="Foto 6">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/A1/ascensos3.jpg" alt="Foto 8">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/A1/ascensos8.jpg" alt="Foto 9">
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="tag-list">
+                    <span class="tag">Liderazgo</span>
+                    <span class="tag">Institucional</span>
+                    <span class="tag">BTPB</span>
+                    <span class="tag">Mando</span>
+                    <span class="tag">Responsabilidad</span>
+                </div>
+
+                <!-- Compartir -->
+                <div class="noticia-share">
+                    <span class="share-label">Compartir:</span>
+                    <button class="share-btn" onclick="compartirWhatsApp()">WhatsApp</button>
+                    <button class="share-btn" onclick="copiarEnlace()">Copiar enlace</button>
+                </div>
+
+                <button class="volver-blog" onclick="cerrarOVolver()">&#8592; Volver al Blog</button>
+
+            </div>
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="noticia-sidebar">
+            <div class="sidebar-bloque">
+                <div class="sidebar-titulo">Publicado por</div>
+                <div class="sidebar-autor">
+                    <div class="autor-avatar">
+                        <img src="../Img/IMG_20230215_133616_865.jpg" alt="Autor">
+                    </div>
+                    <div class="autor-info">
+                        <p>Comunicación Institucional</p>
+                        <span>Escuela Nacional de Bomberos</span>
+                        <span>"Comandante Óscar Rodríguez Gómez"</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function cerrarOVolver() {
+        window.close();
+        setTimeout(() => { window.location.href = '../blog.html'; }, 300);
+    }
+
+    function compartirWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const titulo = encodeURIComponent(document.getElementById('noticia-titulo').innerText);
+        window.open(`https://wa.me/?text=${titulo}%20${url}`, '_blank');
+    }
+
+    function copiarEnlace() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Enlace copiado al portapapeles');
+        });
+    }
+</script>
+
+</body>
+</html>

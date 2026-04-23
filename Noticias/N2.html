@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia | Escuela Nacional de Bomberos "C.O.R.G"</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/noticias.css">
+</head>     
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="../index.html" class="logo-wrapper">  
+            <img src="../Img/logo.png" alt="Logo" class="nav-logo">
+            <div class="logo-text">
+                <span class="main-title">Escuela Nacional de Bomberos</span>
+                <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="noticia-hero">
+        <img src="../Img/Extincion.jpg" alt="Extinción de Incendio">
+        <div class="noticia-hero-overlay">
+            <span class="noticia-categoria">Institucional</span>
+            <h1 id="noticia-titulo">Prácticas Sobre Mangueras</h1>
+            <div class="noticia-meta-hero">
+                <span><b>15 de abril, 2026</b></span>
+                <span><b>Comunicación Institucional</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <div class="noticia-layout">
+
+        <!-- COLUMNA PRINCIPAL -->
+        <article class="noticia-main">
+            <div class="noticia-card">
+                <div class="noticia-card-body">
+
+                    <p class="noticia-intro">
+                        Dominar el fuego requiere más que valor; exige técnica y control absoluto sobre la fuerza 
+                        hidráulica. Los alumnos de duodécimo grado se enfrentaron al desafío de las líneas de ataque 
+                        de alta presión, transformando el agua en su principal herramienta estratégica durante la 
+                        extinción de un incendio.
+                    </p>
+
+                    <div class="noticia-contenido">
+                        <p>No se trata solo de sostener una manguera, sino de entender la física detrás de cada 
+                        chorro. En esta jornada, los alumnos del BTPB perfeccionaron la maniobrabilidad en binomios 
+                        y la transición entre patrones de neblina para protección y chorros sólidos para penetración. 
+                        Esta destreza técnica es lo que separa una respuesta ordinaria de una operación de rescate 
+                        exitosa, garantizando que el equipo pueda avanzar incluso en las condiciones más hostiles.</p>
+
+                        <p>Asi mismo se perfeccionaron las técnicas para el manejo de extintores portátiles, con el 
+                        fin de que los alumnos puedan actuar de manera rápida y eficaz en incendios incipientes, 
+                        evitando su propagación y garantizando la seguridad de las personas y las instalaciones.</p>
+
+                        <blockquote>¡El arte del Control! 👨‍🚒</blockquote>
+                    </div>
+
+                </div>
+
+                <!-- Galería -->
+                <div class="noticia-galeria">
+                    <div class="gal-item main">
+                        <img src="../Img/E1/Extincion1.jpg" alt="Foto 1">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/E1/Extincion4.jpg" alt="Foto 2">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/E1/Extincion3.jpg" alt="Foto 3">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/E1/IMG-20260323-WA0041.jpg" alt="Foto 4">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/E1/IMG-20260323-WA0042.jpg" alt="Foto 5">
+                    </div>
+                    <div class="gal-item main">
+                        <img src="../Img/E1/IMG-20260323-WA0044.jpg" alt="Foto 6">
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="tag-list">
+                    <span class="tag">Extinción de Incendios</span>
+                    <span class="tag">Institucional</span>
+                    <span class="tag">BTPB</span>
+                    <span class="tag">Fuego</span>
+                </div>
+
+                <!-- Compartir -->
+                <div class="noticia-share">
+                    <span class="share-label">Compartir:</span>
+                    <button class="share-btn" onclick="compartirWhatsApp()">WhatsApp</button>
+                    <button class="share-btn" onclick="copiarEnlace()">Copiar enlace</button>
+                </div>
+
+                <button class="volver-blog" onclick="cerrarOVolver()">&#8592; Volver al Blog</button>
+
+            </div>
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="noticia-sidebar">
+            <div class="sidebar-bloque">
+                <div class="sidebar-titulo">Publicado por</div>
+                <div class="sidebar-autor">
+                    <div class="autor-avatar">
+                        <img src="../Img/IMG_20230215_133616_865.jpg" alt="Autor">
+                    </div>
+                    <div class="autor-info">
+                        <p>Comunicación Institucional</p>
+                        <span>Escuela Nacional de Bomberos</span>
+                        <span>"Comandante Óscar Rodríguez Gómez"</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function cerrarOVolver() {
+        window.close();
+        setTimeout(() => { window.location.href = '../blog.html'; }, 300);
+    }
+
+    function compartirWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const titulo = encodeURIComponent(document.getElementById('noticia-titulo').innerText);
+        window.open(`https://wa.me/?text=${titulo}%20${url}`, '_blank');
+    }
+
+    function copiarEnlace() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Enlace copiado al portapapeles');
+        });
+    }
+</script>
+
+</body>
+</html>

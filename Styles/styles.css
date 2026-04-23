@@ -90,6 +90,77 @@ nav ul li a:hover {
     padding-bottom: 2px;
 }
 
+/* 3.1 DROPDOWN / SUBMENÚ */
+nav ul > li {
+    position: relative;
+}
+
+nav ul > li.has-dropdown > a::after {
+    content: ' ▾';
+    font-size: 10px;
+    color: var(--caqui);
+    transition: transform 0.25s;
+    display: inline-block;
+}
+
+nav ul > li.has-dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background-color: var(--azul);
+    border-top: 3px solid var(--rojo);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 8px 0;
+    z-index: 999;
+    animation: dropIn 0.2s ease forwards;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+nav ul > li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    color: #d0cfc8;
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background 0.15s, color 0.15s, padding-left 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.dropdown li a:hover {
+    background-color: rgba(163, 20, 27, 0.15);
+    color: var(--caqui);
+    border-left-color: var(--rojo);
+    padding-left: 24px;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 6px 12px;
+}
 
 /*4. HERO (compartido por todas las páginas)*/
 .hero-section {
@@ -324,7 +395,7 @@ nav ul li a:hover {
 }
 
 .cards-overlap {
-    margin-top: -80px;
+    margin-top: 2rem;
     position: relative;
     z-index: 10;
 }
@@ -1057,6 +1128,27 @@ footer {
 /*16. RESPONSIVO */
 @media (max-width: 720px) {
 
+    .dropdown {
+        position: static;
+        border-top: none;
+        border-left: 3px solid var(--rojo);
+        border-radius: 0;
+        box-shadow: none;
+        animation: none;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    nav ul > li:hover .dropdown,
+    nav ul > li.open .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        padding: 8px 16px 8px 28px;
+        font-size: 13px;
+    }
+
     header { 
         padding: 10px 20px; 
     }
@@ -1164,3 +1256,4 @@ footer {
         font-size: 28px;
     }
 }
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia | Escuela Nacional de Bomberos "C.O.R.G"</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/noticias.css">
+</head>     
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="../index.html" class="logo-wrapper">  
+            <img src="../Img/logo.png" alt="Logo" class="nav-logo">
+            <div class="logo-text">
+                <span class="main-title">Escuela Nacional de Bomberos</span>
+                <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="noticia-hero">
+        <img src="../Img/R1/Entrada Forzada.jpg" alt="Entrada Forzada" id="noticia-img-hero">
+        <div class="noticia-hero-overlay">
+            <span class="noticia-categoria" id="noticia-categoria">Institucional</span>
+            <h1 id="noticia-titulo">Alumnos Realizan práctica de Descenso</h1>
+            <div class="noticia-meta-hero">
+                <span><b id="noticia-fecha">15 de abril, 2026</b></span>
+                <span><b id="noticia-autor">Comunicación Institucional</b></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <div class="noticia-layout">
+
+        <!-- COLUMNA PRINCIPAL -->
+        <article class="noticia-main">
+            <div class="noticia-card">
+                <div class="noticia-card-body">
+
+                    <p class="noticia-intro" id="noticia-intro">
+                        Como miembros del heroico y benemérito cuerpo de bomberos de Honduras, los alumnos de 
+                        duodécimo grado realizan prácticas para la clase de rescate urbano, donde en esta ocasión 
+                        aprendieron el uso de diversas herramientas y técnicas utilizadas en el área.
+                    </p>
+
+                    <div class="noticia-contenido" id="noticia-cuerpo"> 
+                        <p>La Escuela continúa fortaleciendo sus capacidades operativas en los alumnos del último 
+                        año del BTPB, mediante jornadas de capacitación intensiva en el uso de cortadoras de disco 
+                        y mototrozadoras de rescate.</p>
+
+                        <blockquote>
+                            ¡Equipados y Listos para la Acción! 🚒
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Galería -->
+                <div class="noticia-galeria" id="noticia-galeria">
+                    <div class="gal-item main">
+                        <img src="../Img/R1/Rescate1.jpg" alt="Foto 1">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/R1/Rescate2.jpg" alt="Foto 2">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/R1/Rescate3.jpg" alt="Foto 3">
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/R1/Rescate4.jpg" alt="Foto 4"> 
+                    </div>
+                    <div class="gal-item">
+                        <img src="../Img/R1/Rescate5.jpg" alt="Foto 5">
+                    </div>
+                </div> 
+
+                <!-- Tags -->
+                <div class="tag-list">
+                    <span class="tag">Rescate Urbano</span>
+                    <span class="tag">Institucional</span>
+                    <span class="tag">BTPB</span>
+                </div>
+
+                <!-- Compartir -->
+                <div class="noticia-share">
+                    <span class="share-label">Compartir:</span>
+                    <button class="share-btn" onclick="compartirWhatsApp()">WhatsApp</button>
+                    <button class="share-btn" onclick="copiarEnlace()">Copiar enlace</button>
+                </div>
+
+                <button class="volver-blog" onclick="window.close()">&#8592; Volver al Blog</button>
+            </div>
+        </article> 
+
+        <!-- SIDEBAR -->
+        <aside class="noticia-sidebar">
+            <div class="sidebar-bloque">
+                <div class="sidebar-titulo">Publicado por</div>
+                <div class="sidebar-autor">
+                <div class="autor-avatar">
+                    <img src="../Img/IMG_20230215_133616_865.jpg" alt="Autor">
+                </div>
+                <div class="autor-info">
+                    <p id="sidebar-autor-nombre">Comunicación Institucional</p>
+                    <span>Escuela Nacional de Bomberos</span>
+                    <span>"Comandante Oscar Rodríguez Gómez"</span>
+                </div>
+</div>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function compartirWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const titulo = encodeURIComponent(document.getElementById('noticia-titulo').innerText);
+        window.open(`https://wa.me/?text=${titulo}%20${url}`, '_blank');
+    }
+
+    function copiarEnlace() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Enlace copiado al portapapeles');
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Escuela Nacional de Bomberos "Comandante Óscar Rodríguez Gómez"</title>
-    <link rel="stylesheet" href="Styles/styles.css" />
-    <script src="Js/index.js"></script>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <script src="Js/index.js" defer></script>
 </head>
-
 <body>
+
 <header>
     <div class="nav-container">
         <a href="index.html" class="logo-wrapper">
-        <img src="Img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
+            <img src="Img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
             <div class="logo-text">
                 <span class="main-title">Escuela Nacional de Bomberos</span>
                 <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
@@ -22,9 +21,20 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="Historia.html">Historia</a></li>
-                <li><a href="oferta.html">Oferta Académica</a></li>
+                <li class="has-dropdown">
+                    <a href="nosotros.html">Nosotros</a>
+                    <ul class="dropdown">
+                        <li><a href="Historia.html">Historia</a></li>
+                        <li><a href="Promociones.html">Promociones</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="oferta.html">Oferta Academica</a>
+                    <ul class="dropdown">
+                        <li><a href="ofertaBachillerato.html">Bachillerato</a></li>
+                        <li><a href="ofertaTercerCiclo.html">Tercer Ciclo</a></li>
+                    </ul>
+                </li>                
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="transparencia.html">Transparencia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -33,69 +43,66 @@
     </div>
 </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <div class="carousel-slide active">
-                        <img src="Img/Escoltas.JPG" alt="Cadetes de la Escuela Nacional de Bomberos">
-                        <div class="carousel-caption">
-                            <h1>DISCIPLINA HONOR ABNEGACIÓN</h1>
-                            <p>Formando los líderes bomberiles del mañana.</p>
-                        </div>
+<main>
+    <section class="hero-section">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="Img/Escoltas.JPG" alt="Cadetes de la Escuela Nacional de Bomberos">
+                    <div class="carousel-caption">
+                        <h1>DISCIPLINA HONOR ABNEGACIÓN</h1>
+                        <p>Formando los líderes bomberiles del mañana.</p>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="Img/competencias.jpg" alt="Entrenamiento de bomberos">
-                        <div class="carousel-caption">
-                            <h1>ENTRENAMIENTO DE ALTO NIVEL</h1>
-                            <p>Preparación física y técnica constante.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Img/Ascensos1.jpg" alt="Graduación de cadetes">
-                        <div class="carousel-caption">
-                            <h1>FORJANDO EL FUTURO</h1>
-                            <p>Nuevos héroes listos para servir.</p>
-                        </div>
-                    </div>
-
                 </div>
-
-                <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
-                <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
-
-                <div class="carousel-indicators"></div>
+                <div class="carousel-slide">
+                    <img src="Img/competencias.jpg" alt="Entrenamiento de bomberos">
+                    <div class="carousel-caption">
+                        <h1>ENTRENAMIENTO DE ALTO NIVEL</h1>
+                        <p>Preparación física y técnica constante.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Img/Ascensos1.jpg" alt="Graduación de cadetes">
+                    <div class="carousel-caption">
+                        <h1>FORJANDO EL FUTURO</h1>
+                        <p>Nuevos héroes listos para servir.</p>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <div class="container cards-overlap">
-            <div class="grid-layout">
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
 
-                <article class="card">
-                    <img src="Img/ofertaAcademica.png" alt="Oferta académica" class="card-image" width="75" height="75">
-                    <br>
-                    <h2>Oferta Académica</h2>
-                    <p>Contamos con programas especializados para el desarrollo técnico y profesional.</p>
-                    <a href="ofertaTercerCiclo.html" class="text-link">Ver Tercer Ciclo ></a>
-                    <a href="ofertaBachillerato.html" class="text-link">Ver Bachillerato ></a>
-                </article>
-
-                <article class="card">
-                    <img src="Img/actualidadInstitucional.png" alt="Actualidad institucional" class="card-image"
-                        width="75" height="75">
-                    <br>
-                    <h2 style="font-size: 18px;">¡Matrícula para el siguiente año!</h2>
-                    <p>Inicia el proceso de Inscripción para el Ciclo 2027 ¡Únete a nuestra gloriosa institución!</p>
-                    <a href="matricula.html" class="btn">Leer más</a>
-                </article>
-            </div>
+            <div class="carousel-indicators"></div>
         </div>
-    </main>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
-    </footer>
+    <div class="container cards-overlap">
+        <div class="grid-layout">
+            <article class="card">
+                <img src="Img/ofertaAcademica.png" alt="Oferta académica" class="card-image" width="75" height="75">
+                <br>
+                <h2>Oferta Académica</h2>
+                <p>Contamos con programas especializados para el desarrollo técnico y profesional.</p>
+                <a href="ofertaTercerCiclo.html" class="text-link">Ver Tercer Ciclo ></a>
+                <a href="ofertaBachillerato.html" class="text-link">Ver Bachillerato ></a>
+            </article>
+
+            <article class="card">
+                <img src="Img/actualidadInstitucional.png" alt="Actualidad institucional" class="card-image" width="75" height="75">
+                <br>
+                <h2 style="font-size: 18px;">¡Matrícula para el siguiente año!</h2>
+                <p>Inicia el proceso de Inscripción para el Ciclo 2027 ¡Únete a nuestra gloriosa institución!</p>
+                <br>
+                <a href="matricula.html" class="btn">Leer más</a>
+            </article>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+</footer>
 
 </body>
-
 </html>

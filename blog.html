@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escuela Nacional de Bomberos "Comandante Óscar Rodríguez Gómez" - Blog</title>
+    <title>blog | Escuela Nacional de Bomberos "C.O.R.G"</title>
     <link rel="stylesheet" href="Styles/styles.css">
 </head>
 
@@ -21,9 +21,20 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="Historia.html">Historia</a></li>
-                <li><a href="oferta.html">Oferta Académica</a></li>
+                <li class="has-dropdown">
+                    <a href="nosotros.html">Nosotros</a>
+                    <ul class="dropdown">
+                        <li><a href="Historia.html">Historia</a></li>
+                        <li><a href="Promociones.html">Promociones</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="oferta.html">Oferta Academica</a>
+                    <ul class="dropdown">
+                        <li><a href="ofertaBachillerato.html">Bachillerato</a></li>
+                        <li><a href="ofertaTercerCiclo.html">Tercer Ciclo</a></li>
+                    </ul>
+                </li>                
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="transparencia.html">Transparencia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -40,15 +51,14 @@
 
     <div class="blog-container" id="blogContainer">
         <div class="blog-card">
-            <img src="Img/Rescate.jpg" alt="Descenso de Torre como entrenamiento de rescate">
+            <img src="Img/R1/Entrada Forzada.jpg" alt="Descenso de Torre como entrenamiento de rescate">
             <div class="blog-content">
                 <h3>Entrenamiento de Rescate</h3>
-                <p>Los estudiantes realizaron prácticas de rescate en diferentes escenarios de emergencia.</p>
-                <p class="extra-text">
-                    Durante esta actividad los cadetes practicaron técnicas de evacuación,
-                    rescate en estructuras y trabajo en equipo bajo condiciones simuladas de emergencia.
+                <p>Los estudiantes realizaron prácticas de rescate en diferentes escenarios 
+                    de emergencia.
                 </p>
-                <button class="leerMas">Leer más</button>
+                <br>
+                <a href="Noticias/N1.html" target="_blank" class="btn">Leer más</a>
             </div>
         </div>
 
@@ -56,12 +66,10 @@
             <img src="Img/Extincion.jpg" alt="Simulacro de incendio">
             <div class="blog-content">
                 <h3>Simulacro de Incendio</h3>
-                <p>Se realizó un simulacro para mejorar la capacidad de respuesta ante emergencias.</p>
-                <p class="extra-text">
-                    El simulacro incluyó evacuación, control del fuego y coordinación entre brigadas,
-                    permitiendo evaluar los protocolos de seguridad.
+                <p>Se realizó un simulacro para mejorar la capacidad de respuesta ante emergencias.
                 </p>
-                <button class="leerMas">Leer más</button>
+                <br>
+                <a href="Noticias/N2.html" target="_blank" class="btn">Leer más</a>
             </div>
         </div>
 
@@ -71,15 +79,9 @@
                 <h3>Ascensos de Alumnos con Mando</h3>
                 <p>
                     Los alumnos recibieron formación especializada para poder asumir responsabilidades de mando.
-                    Esta acción fue realizada a los alumnos de Undécimo y Duodécimo grado, quienes recibieron
-                    capacitación en liderazgo, toma de decisiones y preparación para roles de mando en situaciones
-                    de emergencia.
                 </p>
-                <p class="extra-text">
-                    La capacitación incluyó control de hemorragias, reanimación cardiopulmonar (RCP)
-                    y atención inmediata a víctimas antes del traslado hospitalario.
-                </p>
-                <button class="leerMas">Leer más</button>
+                <br>
+                <a href="Noticias/N3.html" target="_blank" class="btn">Leer más</a>
             </div>
         </div>
     </div>
@@ -89,7 +91,6 @@
     </div>
 </section>
 
-<script src="javascript/blog.js"></script>
 </body>
 
 </html>
