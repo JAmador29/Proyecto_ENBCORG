@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Escuela Nacional de Bomberos Comandante Óscar Rodríguez Gómez - Formación técnica profesional bomberil en Honduras. Disciplina, Honor y Abnegación.">
+    <meta name="keywords" content="bomberos, escuela, Honduras, formación, bachillerato, tercer ciclo">
+    <meta name="author" content="Escuela Nacional de Bomberos C.O.R.G">
+    <meta property="og:title" content="ENBCORG - Escuela Nacional de Bomberos">
+    <meta property="og:description" content="Formamos bomberos profesionales con valores de disciplina, honor y abnegación.">
+    <meta property="og:image" content="Img/ESCUDO_ENBCORG.png">
+    <meta property="og:image" content="https://enbcorg.vercel.app/Img/ESCUDO_ENBCORG.png">
+    <link rel="canonical" href="https://enbcorg.vercel.app/">
     <title>Escuela Nacional de Bomberos "Comandante Óscar Rodríguez Gómez"</title>
     <link rel="stylesheet" href="Styles/styles.css">
     <script src="Js/index.js" defer></script>
@@ -12,7 +20,7 @@
 <header>
     <div class="nav-container">
         <a href="index.html" class="logo-wrapper">
-            <img src="Img/logo.png" alt="Logo Escuela Nacional de Bomberos" class="nav-logo">
+            <img src="Img/ESCUDO_ENBCORG.png" alt="Escudo Escuela Nacional de Bomberos" class="nav-logo" loading="lazy">
             <div class="logo-text">
                 <span class="main-title">Escuela Nacional de Bomberos</span>
                 <span class="sub-title">"Comandante Óscar Rodríguez Gómez"</span>
@@ -20,21 +28,20 @@
         </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="nav-activo">Inicio</a></li>
                 <li class="has-dropdown">
                     <a href="nosotros.html">Nosotros</a>
                     <ul class="dropdown">
                         <li><a href="Historia.html">Historia</a></li>
-                        <!--<li><a href="Promociones.html">Promociones</a></li>-->
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="oferta.html">Oferta Academica</a>
+                    <a href="oferta.html">Oferta Académica</a>
                     <ul class="dropdown">
                         <li><a href="ofertaBachillerato.html">Bachillerato</a></li>
                         <li><a href="ofertaTercerCiclo.html">Tercer Ciclo</a></li>
                     </ul>
-                </li>                
+                </li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="transparencia.html">Transparencia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -42,37 +49,53 @@
         </nav>
     </div>
 </header>
+<div class="barra-bicolor"></div>
 
 <main>
     <section class="hero-section">
         <div class="carousel-container">
             <div class="carousel-slides">
                 <div class="carousel-slide active">
-                    <img src="Img/Escoltas.JPG" alt="Cadetes de la Escuela Nacional de Bomberos">
+                    <img src="Img/Escoltas.JPG" alt="Cadetes de la Escuela Nacional de Bomberos" loading="lazy">
                     <div class="carousel-caption">
-                        <h1>DISCIPLINA HONOR ABNEGACIÓN</h1>
-                        <p>Formando los líderes bomberiles del mañana.</p>
+                        <span class="hero-tag-institucional">Escuela Nacional de Bomberos</span>
+                        <h1>DISCIPLINA · HONOR · ABNEGACIÓN</h1>
+                        <p>Formando los líderes bomberiles del mañana</p>
+                        <div class="hero-linea-dec"></div>
+                        <div class="hero-cta-wrap">
+                            <a href="nosotros.html" class="hero-btn-solid">Conoce más</a>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="Img/competencias.jpg" alt="Entrenamiento de bomberos">
+                    <img src="Img/competencias.jpg" alt="Entrenamiento de bomberos" loading="lazy">
                     <div class="carousel-caption">
+                        <span class="hero-tag-institucional">Formación de Élite</span>
                         <h1>ENTRENAMIENTO DE ALTO NIVEL</h1>
-                        <p>Preparación física y técnica constante.</p>
+                        <p>Preparación física y técnica constante</p>
+                        <div class="hero-linea-dec"></div>
+                        <div class="hero-cta-wrap">
+                            <a href="oferta.html" class="hero-btn-solid">Oferta Académica</a>
+                            <a href="contacto.html" class="hero-btn-ghost">Contáctanos</a>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="Img/Ascensos1.jpg" alt="Graduación de cadetes">
+                    <img src="Img/Ascensos1.jpg" alt="Graduación de cadetes" loading="lazy">
                     <div class="carousel-caption">
+                        <span class="hero-tag-institucional">Orgullo Nacional</span>
                         <h1>FORJANDO EL FUTURO</h1>
-                        <p>Nuevos héroes listos para servir.</p>
+                        <p>Nuevos héroes listos para servir a Honduras</p>
+                        <div class="hero-linea-dec"></div>
+                        <div class="hero-cta-wrap">
+                            <a href="matricula.html" class="hero-btn-solid">Inscríbete ahora</a>
+                            <a href="Historia.html" class="hero-btn-ghost">Nuestra historia</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
-            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
-
+            <button class="carousel-btn prev" aria-label="Diapositiva anterior">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Diapositiva siguiente">&#10095;</button>
             <div class="carousel-indicators"></div>
         </div>
     </section>
@@ -80,29 +103,61 @@
     <div class="container cards-overlap">
         <div class="grid-layout">
             <article class="card">
-                <img src="Img/ofertaAcademica.png" alt="Oferta académica" class="card-image" width="75" height="75">
-                <br>
+                <div class="card-icon-wrap">📚</div>
+                <span class="card-tag">Programas</span>
                 <h2>Oferta Académica</h2>
-                <p>Contamos con programas especializados para el desarrollo técnico y profesional.</p>
-                <a href="ofertaTercerCiclo.html" class="text-link">Ver Tercer Ciclo ></a>
-                <a href="ofertaBachillerato.html" class="text-link">Ver Bachillerato ></a>
+                <p>Contamos con programas especializados para el desarrollo técnico y profesional de futuros bomberos.</p>
+                <div class="card-btn-group">
+                    <a href="ofertaTercerCiclo.html" class="btn-outline">Tercer Ciclo</a>
+                    <a href="ofertaBachillerato.html" class="btn-outline">Bachillerato</a>
+                </div>
             </article>
-
             <article class="card">
-                <img src="Img/actualidadInstitucional.png" alt="Actualidad institucional" class="card-image" width="75" height="75">
-                <br>
-                <h2 style="font-size: 18px;">¡Matrícula para el siguiente año!</h2>
-                <p>Inicia el proceso de Inscripción para el Ciclo 2027 ¡Únete a nuestra gloriosa institución!</p>
-                <br>
-                <a href="matricula.html" class="btn">Leer más</a>
+                <div class="card-icon-wrap">📋</div>
+                <span class="card-tag">Inscripciones</span>
+                <h2>¡Matrícula Ciclo 2027!</h2>
+                <p>Inicia el proceso de inscripción y únete a nuestra gloriosa institución. Cupos limitados.</p>
+                <div class="card-btn-group">
+                    <a href="matricula.html" class="btn-outline">Proceso de inscripción</a>
+                </div>
             </article>
         </div>
     </div>
 </main>
 
 <footer>
-    <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-brand-top">
+                <img src="Img/ESCUDO_ENBCORG.png" alt="Logo ENBC" class="footer-logo" loading="lazy">
+                <span class="footer-brand-name">Escuela Nacional<br>de Bomberos</span>
+            </div>
+            <p class="footer-brand-sub">"Comandante Óscar Rodríguez Gómez" — Institución pública formadora de bomberos profesionales al servicio de Honduras.</p>
+        </div>
+        <div>
+            <p class="footer-col-title">Navegación</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Historia.html">Historia</a></li>
+                <li><a href="oferta.html">Oferta Académica</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="transparencia.html">Transparencia</a></li>
+                <li><a href="matricula.html">Matrícula</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Contacto</p>
+            <div class="footer-contacto-item"><span class="footer-contacto-label">País</span><span class="footer-contacto-val">Honduras, C.A.</span></div>
+            <div class="footer-contacto-item"><span class="footer-contacto-label">Institución</span><span class="footer-contacto-val">Cuerpo de Bomberos de Honduras</span></div>
+            <div class="footer-contacto-item"><span class="footer-contacto-label">Sección</span><span class="footer-contacto-val">Escuela Nacional de Bomberos</span></div>
+        </div>
+    </div>
+    <div class="footer-base">
+        <p>&copy; 2026 Escuela Nacional de Bomberos "Óscar Rodríguez Gómez". Todos los derechos reservados.</p>
+        <span>🇭🇳 Honduras</span>
+    </div>
+    <div class="footer-barra-bicolor"></div>
 </footer>
-
 </body>
 </html>
