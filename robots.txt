@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enbcorg.vercel.app/sitemap.xml
+Sitemap: https://escuela-nacional-de-bomberos.vercel.app/sitemap.xml

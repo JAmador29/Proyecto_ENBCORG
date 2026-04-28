@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://enbcorg.vercel.app/</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/nosotros.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/nosotros.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/Historia.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/Historia.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/oferta.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/oferta.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/ofertaBachillerato.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/ofertaBachillerato.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/ofertaTercerCiclo.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/ofertaTercerCiclo.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/matricula.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/matricula.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://enbcorg.vercel.app/contacto.html</loc>
+    <loc>https://escuela-nacional-de-bomberos.vercel.app/contacto.html</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
