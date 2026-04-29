@@ -1,16 +1,16 @@
 /* ENBCORG — Estilos completos con mejoras visuales */
 
-/* 1. VARIABLES GLOBALES */
+/* 1. VARIABLES GLOBALES — Paleta H: Bandera Hondureña */
 :root {
-    --rojo:       #a3141b;
-    --rojo-osc:   #7f1015;
-    --azul:       #2A306F;
-    --azul-osc:   #1a1f4e;
-    --caqui:      #E0D8B0;
-    --blanco:     #ffffff;
-    --gris-fondo: #f5f5f5;
-    --sombra:     0 2px 12px rgba(0, 0, 0, 0.08);
-    --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.14);
+    --rojo:         #cc1a2a;
+    --rojo-osc:     #a01422;
+    --azul:         #003580;
+    --azul-osc:     #001f4d;
+    --caqui:        #E0D8B0 ;
+    --blanco:       #ffffff;
+    --gris-fondo:   #f0f4ff;
+    --sombra:       0 2px 12px rgba(0, 53, 128, 0.10);
+    --sombra-hover: 0 8px 24px rgba(0, 53, 128, 0.18);
 }
 
 /* 2. RESET BASE */
@@ -166,7 +166,7 @@ nav ul > li:hover .dropdown {
 }
 
 .dropdown li a:hover {
-    background-color: rgba(163, 20, 27, 0.15);
+    background-color: rgba(204, 26, 42, 0.15);
     color: var(--caqui);
     border-left-color: var(--rojo);
     padding-left: 24px;
@@ -438,7 +438,7 @@ nav ul > li:hover .dropdown {
     width: 42px;
     height: 42px;
     border-radius: 8px;
-    background-color: #f0f2ff;
+    background-color: #e6f0ff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,7 +448,7 @@ nav ul > li:hover .dropdown {
 
 .card-tag {
     display: inline-block;
-    background-color: #f0f2ff;
+    background-color: #e6f0ff;
     color: var(--azul);
     font-size: 0.68rem;
     font-weight: bold;
@@ -536,7 +536,7 @@ nav ul > li:hover .dropdown {
 }
 
 .btn-secondary:hover {
-    background-color: #1e2455;
+    background-color: #002a6e;
 }
 
 
@@ -621,6 +621,7 @@ nav ul > li:hover .dropdown {
     padding: 24px 28px;
     margin-bottom: 20px;
 }
+
 /*Bloque-1 Solamente para las promociones */
 .titulo-linea-1 {
     width: 60px;
@@ -673,16 +674,16 @@ nav ul > li:hover .dropdown {
 }
 
 .historia-bloque-1 img {
-    width: 100%;           /* ocupa el ancho del contenedor */
-    max-width: 100%;       /* nunca se desborda */
-    height: 420px;         /* altura fija — ajusta a tu gusto */
-    object-fit: cover;     /* recorta sin deformar */
+    width: 100%;
+    max-width: 100%;
+    height: 420px;
+    object-fit: cover;
     object-position: center;
     display: block;
     border-radius: 4px;
-    border-left: 5px solid var(--rojo);  /* línea roja a la izquierda */
+    border-left: 5px solid var(--rojo);
 }
-/*FIn*/
+/*Fin*/
 
 .historia-bloque .anio {
     display: inline-block;
@@ -778,7 +779,7 @@ nav ul > li:hover .dropdown {
     padding: 10px 18px;
     border-radius: 20px;
     font-weight: bold;
-    color: var(--rojo);
+    color: var(--azul);
     transition: 0.3s;
 }
 
@@ -822,7 +823,6 @@ nav ul > li:hover .dropdown {
     margin-bottom: 80px;
     display: flex;
     justify-content: center;
-
 }
 
 .oferta-card {
@@ -1089,7 +1089,7 @@ nav ul > li:hover .dropdown {
     font-size: 0.72rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(224, 216, 176, 0.6);
+    color: rgba(168, 196, 240, 0.6);
     margin-bottom: 5px;
 }
 
@@ -1122,7 +1122,7 @@ nav ul > li:hover .dropdown {
 }
 
 .contacto-horario {
-    background-color: var(--caqui);
+    background-color: var(--gris-fondo);
     padding: 60px 50px;
     display: flex;
     flex-direction: column;
@@ -1311,7 +1311,7 @@ footer {
 
 .footer-brand-sub {
     font-size: 0.75rem;
-    color: rgba(224, 216, 176, 0.7);
+    color: rgba(168, 196, 240, 0.7);
     line-height: 1.6;
     max-width: 220px;
 }
@@ -1354,7 +1354,7 @@ footer {
 
 .footer-contacto-label {
     font-size: 0.7rem;
-    color: rgba(224, 216, 176, 0.55);
+    color: rgba(168, 196, 240, 0.55);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -1381,7 +1381,7 @@ footer {
 
 .footer-base span {
     font-size: 0.78rem;
-    color: rgba(224, 216, 176, 0.6);
+    color: rgba(168, 196, 240, 0.6);
 }
 
 .footer-barra-bicolor {
@@ -1429,7 +1429,7 @@ footer {
 
     .dropdown li a:hover {
         color: var(--rojo-osc);
-        background-color: rgba(163, 20, 27, 0.07);
+        background-color: rgba(204, 26, 42, 0.07);
     }
 
     .hero-section,
@@ -1451,7 +1451,6 @@ footer {
     .historia-contenido { padding: 0 20px; margin: 40px auto; }
     .historia-bloque { padding: 18px 20px; }
     .historia-bloque-1 { padding: 18px 20px; }
-
 
     .mision-vision,
     .motivacion-logros { grid-template-columns: 1fr; }
