@@ -621,6 +621,68 @@ nav ul > li:hover .dropdown {
     padding: 24px 28px;
     margin-bottom: 20px;
 }
+/*Bloque-1 Solamente para las promociones */
+.titulo-linea-1 {
+    width: 60px;
+    height: 3px;
+    background-color: var(--rojo);
+    margin-bottom: 40px;
+}
+
+.historia-contenido-1 {
+    max-width: 860px;
+    margin: 0 auto 60px auto;
+    padding: 0 40px;
+}
+
+.historia-contenido-1 h2 {
+    font-size: 1.6rem;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.historia-bloque-1 {
+    background-color: var(--blanco);
+    border-left: 5px solid var(--rojo);
+    box-shadow: var(--sombra);
+    padding: 28px 28px;
+    margin-bottom: 20px;
+}
+
+.historia-bloque-1 .anio {
+    display: inline-block;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-size: 0.72rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+}
+
+.historia-bloque-1 p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: #333;
+}
+
+.historia-bloque-1 p + p {
+    margin-top: 14px;
+}
+
+.historia-bloque-1 img {
+    width: 100%;           /* ocupa el ancho del contenedor */
+    max-width: 100%;       /* nunca se desborda */
+    height: 420px;         /* altura fija — ajusta a tu gusto */
+    object-fit: cover;     /* recorta sin deformar */
+    object-position: center;
+    display: block;
+    border-radius: 4px;
+    border-left: 5px solid var(--rojo);  /* línea roja a la izquierda */
+}
+/*FIn*/
 
 .historia-bloque .anio {
     display: inline-block;
@@ -1388,6 +1450,8 @@ footer {
 
     .historia-contenido { padding: 0 20px; margin: 40px auto; }
     .historia-bloque { padding: 18px 20px; }
+    .historia-bloque-1 { padding: 18px 20px; }
+
 
     .mision-vision,
     .motivacion-logros { grid-template-columns: 1fr; }
